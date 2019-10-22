@@ -1,0 +1,11 @@
+apiVersion: V1
+kind: Service
+metadata:
+  name: eventstreamcoreapi-service
+spec:
+  type: NodePort
+  ports:
+    - targetPort: 80
+      nodePort: 31555
+  selector:
+    component: web

@@ -1,0 +1,12 @@
+apiVersion: V1
+kind: Pod
+metadata:
+  name: eventstreamcoreapi-pod
+  lables:
+    component: web
+spec:
+  containers:
+    - name: eventstreamcoreapi
+      image: devbolddocker.azurecr.io/eventstreamcoreapi:latest
+      ports:
+        - containerPort: 80
