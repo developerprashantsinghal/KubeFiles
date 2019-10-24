@@ -9,8 +9,10 @@ spec:
     - name: eventstreamcoreapi
       imagePullPolicy: Always
       image: devbolddocker.azurecr.io/eventstreamcoreapi:{tagToken}
+      #This command will replace the entry point of the container
       command: ["dotnet",  "BOLD.CoreEventsStreamService.Api.dll", "--environment={environmentToken}"]
       ports:
         - containerPort: 80
+        #This will add the secret keys for Azure container registry
   imagePullSecrets:
   - name: myregistrykey
