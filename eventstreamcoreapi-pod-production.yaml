@@ -1,12 +1,14 @@
 apiVersion: v1 
 kind: Pod 
 metadata:
-  name: eventstreamcoreapi-pod
+  name: eventstreamcoreapi-production
   labels:
-    component: web
+    component: web2
+    environment: production
+    app: stormweb
 spec:
   containers:
-    - name: eventstreamcoreapi
+    - name: stormapiproduction
       imagePullPolicy: Always
       image: devbolddocker.azurecr.io/eventstreamcoreapi:67
       command: ["dotnet",  "BOLD.CoreEventsStreamService.Api.dll", "--environment=QA"]

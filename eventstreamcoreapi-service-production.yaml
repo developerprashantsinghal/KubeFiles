@@ -1,0 +1,14 @@
+apiVersion: v1
+kind: Service
+metadata:
+  name: eventstreamcoreapi-production
+spec:
+  type: NodePort
+  ports:
+    - port: 3050
+      targetPort: 80
+      nodePort: 32222
+  selector:
+    component: web2
+    environment: production
+    app: stormweb
