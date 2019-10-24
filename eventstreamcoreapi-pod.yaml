@@ -8,7 +8,8 @@ spec:
   containers:
     - name: eventstreamcoreapi
       imagePullPolicy: Always
-      image: devbolddocker.azurecr.io/eventstreamcoreapi:68
+      image: devbolddocker.azurecr.io/eventstreamcoreapi:{tagToken}
+      command: ["dotnet",  "BOLD.CoreEventsStreamService.Api.dll", "--environment={environmentToken}"]
       ports:
         - containerPort: 80
   imagePullSecrets:
