@@ -7,6 +7,9 @@ metadata:
 spec:
   containers:
     - name: eventstreamcoreapi
-      image: devbolddocker.azurecr.io/eventstreamcoreapi:latest
+      imagePullPolicy: Always
+      image: devbolddocker.azurecr.io/eventstreamcoreapi:68
       ports:
         - containerPort: 80
+  imagePullSecrets:
+  - name: myregistrykey
